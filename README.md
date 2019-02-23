@@ -32,4 +32,4 @@ O seu objetivo é ajudar Seiya, Shiryu, Hyoga, Shun e Ikki a passar pelas 12 Cas
 Zodíaco, derrotando todos os Cavaleiros de Ouro e salvando Atena o mais rápido
 possível!”.
 
-[](cavaleiros/image/ilustracao.png)
+![](cavaleiros/image/figura1.png) ![](cavaleiros/image/figura2.png)
