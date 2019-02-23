@@ -47,7 +47,7 @@ __12 Casas do Zodíaco e derrotar os 12 Cavaleiros de Ouro no menor tempo possí
 
 O mapa das __12 Casas do Zodíaco__ é mostrado na Figura 3.
 
-[](cavaleiros/image/figura2.png)
+![](cavaleiros/image/figura2.png)
 
 No caminho das 12 Casas do Zodíaco existem 3 __tipos de terrenos:__ montanhoso (região
 cinza escuro), plano (região cinza) e rochoso (região cinza claro).
@@ -70,7 +70,7 @@ Bronze para pode vencê-lo e avançar para a próxima Casa.
 
 A Tabela 1 mostra os níveis de dificuldade das 12 Casas do Zodíaco.
 
-[](cavaleiros/image/tabela.png)
+![](cavaleiros/image/tabela.png)
 
 O __número de Cavaleiros de Bronze__ participando das batalhas contra os Cavaleiros de
 Ouro influência o tempo gasto na batalha. Além disso, cada Cavaleiro possui um
@@ -80,11 +80,11 @@ derrotado.
 
 A Tabela 2 mostra o poder cósmico dos Cavaleiros de Bronze.
 
-[](cavaleiros/image/tabela2.png)
+![](cavaleiros/image/tabela2.png)
 
 O tempo gasto nas batalhas contra os Cavaleiros de Ouro é dado por:
 
-[](cavaleiros/image/tempo.png)
+![](cavaleiros/image/tempo.png)
 
 Além do poder cósmico, cada Cavaleiro de Bronze também possui __5 pontos de energia.__
 Ao participar de uma batalha, o Cavaleiro perde -1 ponto de energia. Se o Cavaleiro
