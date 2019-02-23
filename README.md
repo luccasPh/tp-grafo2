@@ -97,7 +97,3 @@ chegar até a Casa do Grande Mestre;
 
 2. Encontrar a melhor ordem de equipes para lutar contra os Cavaleiros de
 Bronze.
-
-Os dois problemas podem ser resolvidos individualmente ou tratando ambos em
-um único problema. Você deve definir a melhor maneira de estruturar a sua
-solução
