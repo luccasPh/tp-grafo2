@@ -32,6 +32,3 @@ O seu objetivo é ajudar Seiya, Shiryu, Hyoga, Shun e Ikki a passar pelas 12 Cas
 Zodíaco, derrotando todos os Cavaleiros de Ouro e salvando Atena o mais rápido
 possível!”.
 
-![Os Cavaleiros de Bronze](cavaleiros/image/figura1.png)   ![As 12 Casas do Zodíaco](cavaleiros/image/figura2.png)
-
-_Figura 1. Os Cavaleiros de Bronze._           _Figura 2. As 12 Casas do Zodíaco._
