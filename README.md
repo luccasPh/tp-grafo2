@@ -37,6 +37,6 @@ possível!”.
 O Trabalho 1 consiste em implementar um agente capaz de guiar autonomamente Seiya,
 Shiryu, Hyoga, Shun e Ikki pelas 12 Casas do Zodíaco, planejando a melhor forma de
 derrotar os 12 Cavaleiros de Ouro e salvar Atena. Para isso, você deve utilizar o
-algoritmo de busca heurística A*<br>.
+__algoritmo de busca heurística A*__.
 O agente deve ser capaz de calcular automaticamente a melhor rota para percorrer as
 12 Casas do Zodíaco e derrotar os 12 Cavaleiros de Ouro no menor tempo possível.
