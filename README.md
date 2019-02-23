@@ -31,5 +31,3 @@ ainda mais, os Cavaleiros tem um prazo máximo de 12 horas para realizar essa ta
 O seu objetivo é ajudar Seiya, Shiryu, Hyoga, Shun e Ikki a passar pelas 12 Casas do
 Zodíaco, derrotando todos os Cavaleiros de Ouro e salvando Atena o mais rápido
 possível!”.
-
-![](cavaleiros/image/figura1.png)
