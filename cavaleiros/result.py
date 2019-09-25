@@ -1,10 +1,10 @@
-from PyQt5 import QtGui, QtCore
+from PyQt5 import QtWidgets, QtGui, QtCore
 from datetime import timedelta
 from cavaleiros.stars import Stars
 from cavaleiros.fim import Fim
 from cavaleiros.battle import Battle
 from cavaleiros.mapa import mapa_casas
-from PyQt4 import phonon
+from PyQt5 import QtMultimedia
 import time
 #from bfs import BFS
 import sys, os
@@ -58,7 +58,7 @@ class IA:
 		return self.S.buscar(cava, casa, mapa)
 
 
-class Result(QtGui.QWidget):
+class Result(QtWidgets.QWidget):
 	def __init__(self, maxTime, cava, casa):
 		super(Result, self).__init__()
 		self.audio = os.path.join(os.path.dirname(__file__), 'audio')
@@ -74,10 +74,10 @@ class Result(QtGui.QWidget):
 		self.seque_cav = [0,1,2,3,4]
 		self.cavaleiros = cava
 
-		self.mediaObject = phonon.Phonon.MediaObject()
-		self.audioOutput = phonon.Phonon.AudioOutput(phonon.Phonon.MusicCategory, self)
-		phonon.Phonon.createPath(self.mediaObject, self.audioOutput)
-		self.mediaObject.setCurrentSource(phonon.Phonon.MediaSource(os.path.join(self.audio, 'soundtrack.mp3')))
+		audioUrl = QtCore.QUrl.fromLocalFile(os.path.join(self.audio, 'soundtrack.mp3'))
+		audioOutput = QtMultimedia.QMediaContent(audioUrl)
+		self.mediaObject = QtMultimedia.QMediaPlayer()
+		self.mediaObject.setMedia(audioOutput)
 		self.mediaObject.play()
 
 		self.player = Player(37,37)
@@ -147,7 +147,7 @@ class Result(QtGui.QWidget):
 		if self.player.pos_x == 4 and self.player.pos_y == 37:
 			self.timer.stop()
 			self.mediaObject.stop()
-			self.tela = QtGui.QWidget()
+			self.tela = QtWidgets.QWidget()
 			self.ui = Fim()
 			self.ui.setupUi(self.tela)
 			self.tela.show()

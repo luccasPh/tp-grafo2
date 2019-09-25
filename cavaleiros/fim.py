@@ -6,8 +6,8 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
-from PyQt4 import phonon
+from PyQt5 import QtWidgets, QtCore, QtGui
+from PyQt5 import QtMultimedia
 import os
 
 try:
@@ -17,12 +17,12 @@ except AttributeError:
         return s
 
 try:
-    _encoding = QtGui.QApplication.UnicodeUTF8
+    _encoding = QtWidgets.QApplication.UnicodeUTF8
     def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+        return QtWidgets.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig)
+        return QtWidgets.QApplication.translate(context, text, disambig)
 
 class Fim(object):
     def setupUi(self, Form):
@@ -31,13 +31,13 @@ class Fim(object):
         Form.setObjectName(_fromUtf8("Form"))
         Form.resize(570, 428)
         Form.setStyleSheet(_fromUtf8(""))
-        self.label = QtGui.QLabel(Form)
+        self.label = QtWidgets.QLabel(Form)
         self.label.setGeometry(QtCore.QRect(0, 0, 571, 431))
         self.label.setText(_fromUtf8(""))
         self.label.setPixmap(QtGui.QPixmap(_fromUtf8(os.path.join(self.image, 'fim.jpg'))))
         self.label.setScaledContents(True)
         self.label.setObjectName(_fromUtf8("label"))
-        self.label_2 = QtGui.QLabel(Form)
+        self.label_2 = QtWidgets.QLabel(Form)
         self.label_2.setGeometry(QtCore.QRect(200, 10, 151, 91))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Sitka Small"))
@@ -46,10 +46,11 @@ class Fim(object):
         font.setWeight(75)
         self.label_2.setFont(font)
         self.label_2.setObjectName(_fromUtf8("label_2"))
-        self.mediaObject = phonon.Phonon.MediaObject()
-        self.audioOutput = phonon.Phonon.AudioOutput(phonon.Phonon.MusicCategory, Form)
-        phonon.Phonon.createPath(self.mediaObject, self.audioOutput)
-        self.mediaObject.setCurrentSource(phonon.Phonon.MediaSource(os.path.join(audio, 'fim.mp3')))
+
+        audioUrl = QtCore.QUrl.fromLocalFile(os.path.join(audio, 'fim.mp3'))
+        audioOutput = QtMultimedia.QMediaContent(audioUrl)
+        self.mediaObject = QtMultimedia.QMediaPlayer()
+        self.mediaObject.setMedia(audioOutput)
         self.mediaObject.play()
 
         self.retranslateUi(Form)

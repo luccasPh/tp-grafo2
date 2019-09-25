@@ -6,8 +6,8 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
-from PyQt4 import phonon
+from PyQt5 import QtWidgets, QtCore, QtGui
+from PyQt5 import QtMultimedia
 from cavaleiros.result import Result
 from cavaleiros.config import Config
 import os
@@ -19,12 +19,12 @@ except AttributeError:
         return s
 
 try:
-    _encoding = QtGui.QApplication.UnicodeUTF8
+    _encoding = QtWidgets.QApplication.UnicodeUTF8
     def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+        return QtWidgets.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig)
+        return QtWidgets.QApplication.translate(context, text, disambig)
 
 
 class Cavaleiro:
@@ -49,18 +49,20 @@ class Home(object):
         Form.setObjectName(_fromUtf8("Form"))
         Form.resize(699, 380)
         self.AI = None
-        self.label = QtGui.QLabel(Form)
+        self.label = QtWidgets.QLabel(Form)
         self.label.setGeometry(QtCore.QRect(0, 0, 701, 381))
         self.label.setText(_fromUtf8(""))
         self.label.setPixmap(QtGui.QPixmap(_fromUtf8(os.path.join(self.image, 'home.jpeg'))))
-        self.mediaObject = phonon.Phonon.MediaObject()
-        self.audioOutput = phonon.Phonon.AudioOutput(phonon.Phonon.MusicCategory, Form)
-        phonon.Phonon.createPath(self.mediaObject, self.audioOutput)
-        self.mediaObject.setCurrentSource(phonon.Phonon.MediaSource(os.path.join(audio, 'abertura.mp3')))
+        
+        audioUrl = QtCore.QUrl.fromLocalFile(os.path.join(audio, 'abertura.mp3'))
+        self.audioContent = QtMultimedia.QMediaContent(audioUrl)
+        self.mediaObject = QtMultimedia.QMediaPlayer()
+        self.mediaObject.setMedia(self.audioContent)
         self.mediaObject.play()
+
         self.label.setScaledContents(True)
         self.label.setObjectName(_fromUtf8("label"))
-        self.pushButton_3 = QtGui.QPushButton(Form)
+        self.pushButton_3 = QtWidgets.QPushButton(Form)
         self.pushButton_3.setGeometry(QtCore.QRect(50, 50, 131, 41))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Sitka Small"))
@@ -78,7 +80,7 @@ class Home(object):
         self.pushButton_3.setObjectName(_fromUtf8("pushButton_3"))
         self.pushButton_3.clicked.connect(lambda:self.start_ai(Form))
 
-        self.pushButton_4 = QtGui.QPushButton(Form)
+        self.pushButton_4 = QtWidgets.QPushButton(Form)
         self.pushButton_4.setGeometry(QtCore.QRect(50, 120, 131, 41))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Sitka Small"))
@@ -128,7 +130,7 @@ class Home(object):
         self.pushButton_4.setText(_translate("Form", "CONFIGURA", None))
 
     def reproduzi(self):
-        self.mediaObject.setCurrentSource(phonon.Phonon.MediaSource(os.path.join(self.image, 'abertura.mp3')))
+        self.mediaObject.setMedia(self.audioContent)
         self.mediaObject.play()
 
     def start_ai(self, Form):
@@ -142,7 +144,7 @@ class Home(object):
         self.AI = Result(maxTime, self.cavaleiros, self.casas)
 
     def configuracao(self):
-        self.tela = QtGui.QWidget()
+        self.tela = QtWidgets.QWidget()
         self.ui = Config()
         self.ui.setupUi(self.tela, self.cavaleiros, self.casas)
         self.tela.show()
@@ -151,7 +153,7 @@ class Home(object):
 """
 if __name__ == "__main__":
     import sys
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     Form = QtGui.QWidget()
     ui = Ui_Form()
     ui.setupUi(Form)

@@ -19,7 +19,6 @@ class Battle:
 		return self.poder_casa/soma_poder, poder_vida
 
 	def buscar(self, maxTime, seque):
-		print(maxTime)
 		lista = []
 		fronteira = []
 		tempo, poder_vida = self.calcular_tempo(seque)
