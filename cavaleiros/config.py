@@ -8,23 +8,31 @@
 
 from PyQt5 import QtWidgets, QtCore, QtGui
 import os
+
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
+
     def _fromUtf8(s):
         return s
 
+
 try:
     _encoding = QtWidgets.QApplication.UnicodeUTF8
+
     def _translate(context, text, disambig):
         return QtWidgets.QApplication.translate(context, text, disambig, _encoding)
+
+
 except AttributeError:
+
     def _translate(context, text, disambig):
         return QtWidgets.QApplication.translate(context, text, disambig)
 
+
 class Config(object):
     def setupUi(self, Form, cava, casa):
-        self.image = os.path.join(os.path.dirname(__file__), 'image')
+        self.image = os.path.join(os.path.dirname(__file__), "image")
         Form.setObjectName(_fromUtf8("Form"))
         Form.resize(371, 566)
         Form.setStyleSheet(_fromUtf8(""))
@@ -49,13 +57,17 @@ class Config(object):
         self.label_3 = QtWidgets.QLabel(self.groupBox)
         self.label_3.setGeometry(QtCore.QRect(10, 140, 51, 51))
         self.label_3.setText(_fromUtf8(""))
-        self.label_3.setPixmap(QtGui.QPixmap(_fromUtf8(os.path.join(self.image, 'hyoga.png'))))
+        self.label_3.setPixmap(
+            QtGui.QPixmap(_fromUtf8(os.path.join(self.image, "hyoga.png")))
+        )
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName(_fromUtf8("label_3"))
         self.label = QtWidgets.QLabel(self.groupBox)
         self.label.setGeometry(QtCore.QRect(10, 20, 51, 51))
         self.label.setText(_fromUtf8(""))
-        self.label.setPixmap(QtGui.QPixmap(_fromUtf8(os.path.join(self.image, 'seya2.png'))))
+        self.label.setPixmap(
+            QtGui.QPixmap(_fromUtf8(os.path.join(self.image, "seya2.png")))
+        )
         self.label.setScaledContents(True)
         self.label.setObjectName(_fromUtf8("label"))
         self.doubleSpinBox_3 = QtWidgets.QDoubleSpinBox(self.groupBox)
@@ -109,13 +121,17 @@ class Config(object):
         self.label_2 = QtWidgets.QLabel(self.groupBox)
         self.label_2.setGeometry(QtCore.QRect(10, 80, 51, 51))
         self.label_2.setText(_fromUtf8(""))
-        self.label_2.setPixmap(QtGui.QPixmap(_fromUtf8(os.path.join(self.image, 'shiryu.png'))))
+        self.label_2.setPixmap(
+            QtGui.QPixmap(_fromUtf8(os.path.join(self.image, "shiryu.png")))
+        )
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName(_fromUtf8("label_2"))
         self.label_9 = QtWidgets.QLabel(self.groupBox)
         self.label_9.setGeometry(QtCore.QRect(10, 260, 51, 61))
         self.label_9.setText(_fromUtf8(""))
-        self.label_9.setPixmap(QtGui.QPixmap(_fromUtf8(os.path.join(self.image, 'ikki.png'))))
+        self.label_9.setPixmap(
+            QtGui.QPixmap(_fromUtf8(os.path.join(self.image, "ikki.png")))
+        )
         self.label_9.setScaledContents(True)
         self.label_9.setObjectName(_fromUtf8("label_9"))
         self.doubleSpinBox = QtWidgets.QDoubleSpinBox(self.groupBox)
@@ -129,7 +145,9 @@ class Config(object):
         self.label_4 = QtWidgets.QLabel(self.groupBox)
         self.label_4.setGeometry(QtCore.QRect(10, 200, 51, 51))
         self.label_4.setText(_fromUtf8(""))
-        self.label_4.setPixmap(QtGui.QPixmap(_fromUtf8(os.path.join(self.image, 'shun.png'))))
+        self.label_4.setPixmap(
+            QtGui.QPixmap(_fromUtf8(os.path.join(self.image, "shun.png")))
+        )
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName(_fromUtf8("label_4"))
         self.label_8 = QtWidgets.QLabel(self.groupBox)
@@ -375,7 +393,9 @@ class Config(object):
         self.label_12 = QtWidgets.QLabel(Form)
         self.label_12.setGeometry(QtCore.QRect(0, 0, 371, 591))
         self.label_12.setText(_fromUtf8(""))
-        self.label_12.setPixmap(QtGui.QPixmap(_fromUtf8(os.path.join(self.image, 'fundo.jpg'))))
+        self.label_12.setPixmap(
+            QtGui.QPixmap(_fromUtf8(os.path.join(self.image, "fundo.jpg")))
+        )
         self.label_12.setScaledContents(True)
         self.label_12.setObjectName(_fromUtf8("label_12"))
         self.pushButton = QtWidgets.QPushButton(Form)
@@ -385,12 +405,16 @@ class Config(object):
         font.setBold(True)
         font.setWeight(75)
         self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet(_fromUtf8("border-style: outset;\n"
-"border-width: 2px;\n"
-"border-radius: 15px;\n"
-"border-color: rgb(255, 0, 0);\n"
-"padding: 4px;\n"
-"background-color: red;"))
+        self.pushButton.setStyleSheet(
+            _fromUtf8(
+                "border-style: outset;\n"
+                "border-width: 2px;\n"
+                "border-radius: 15px;\n"
+                "border-color: rgb(255, 0, 0);\n"
+                "padding: 4px;\n"
+                "background-color: red;"
+            )
+        )
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
         self.pushButton.clicked.connect(self.default)
 
@@ -401,14 +425,18 @@ class Config(object):
         font.setBold(True)
         font.setWeight(75)
         self.pushButton_2.setFont(font)
-        self.pushButton_2.setStyleSheet(_fromUtf8("border-style: outset;\n"
-"border-width: 2px;\n"
-"border-radius: 15px;\n"
-"border-color: rgb(190, 190, 190);\n"
-"padding: 4px;\n"
-"background-color: green"))
+        self.pushButton_2.setStyleSheet(
+            _fromUtf8(
+                "border-style: outset;\n"
+                "border-width: 2px;\n"
+                "border-radius: 15px;\n"
+                "border-color: rgb(190, 190, 190);\n"
+                "padding: 4px;\n"
+                "background-color: green"
+            )
+        )
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
-        self.pushButton_2.clicked.connect(lambda:self.salvar(Form, cava, casa))
+        self.pushButton_2.clicked.connect(lambda: self.salvar(Form, cava, casa))
 
         self.label_11 = QtWidgets.QLabel(Form)
         self.label_11.setGeometry(QtCore.QRect(70, 0, 251, 41))
@@ -474,40 +502,135 @@ class Config(object):
 
         Form.close()
 
-
-
     def retranslateUi(self, Form):
         Form.setWindowTitle(_translate("Form", "Form", None))
         self.groupBox.setTitle(_translate("Form", "Cavaleiros Poder", None))
-        self.label_10.setText(_translate("Form", "<html><head/><body><p><span style=\" color:#ff007f;\">Ikki</span></p></body></html>", None))
-        self.label_6.setText(_translate("Form", "<html><head/><body><p><span style=\" color:#00caca;\">Shiryu</span></p></body></html>", None))
-        self.label_7.setText(_translate("Form", "<html><head/><body><p><span style=\" color:#aaffff;\">Hyoga</span></p></body></html>", None))
-        self.label_8.setText(_translate("Form", "<html><head/><body><p><span style=\" color:#bd008e;\">Shun</span></p></body></html>", None))
-        self.label_5.setText(_translate("Form", "<html><head/><body><p><span style=\" color:#ff0000;\">Seya</span></p></body></html>", None))
+        self.label_10.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" color:#ff007f;">Ikki</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_6.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" color:#00caca;">Shiryu</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_7.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" color:#aaffff;">Hyoga</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_8.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" color:#bd008e;">Shun</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_5.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" color:#ff0000;">Seya</span></p></body></html>',
+                None,
+            )
+        )
         self.groupBox_2.setTitle(_translate("Form", "Casas Dificuldades", None))
-        self.label_20.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:18pt; color:#ffff00;\">ÁRIES</span></p></body></html>", None))
-        self.label_21.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:16pt; color:#ffff00;\">TOURO</span></p></body></html>", None))
-        self.label_22.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffff00;\">CÂNCER</span></p></body></html>", None))
-        self.label_23.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffff00;\">GÊMEOS</span></p></body></html>", None))
-        self.label_28.setText(_translate("Form", "<html><head/><body><p><span style=\" color:#ffff00;\">ESCORPIÃO</span></p></body></html>", None))
-        self.label_29.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffff00;\">VIRGEM</span></p></body></html>", None))
-        self.label_30.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:18pt; color:#ffff00;\">LEÃO</span></p></body></html>", None))
-        self.label_31.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:16pt; color:#ffff00;\">LIBRAS</span></p></body></html>", None))
-        self.label_32.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:18pt; color:#ffff00;\">PEIXE</span></p></body></html>", None))
-        self.label_33.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:9pt; color:#ffff00;\">CAPRICÓRNIO</span></p></body></html>", None))
-        self.label_34.setText(_translate("Form", "<html><head/><body><p><span style=\" color:#ffff00;\">SARGITÁRIO</span></p></body></html>", None))
-        self.label_35.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffff00;\">AQUÁRIOS</span></p></body></html>", None))
+        self.label_20.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-size:18pt; color:#ffff00;">ÁRIES</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_21.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-size:16pt; color:#ffff00;">TOURO</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_22.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-size:14pt; color:#ffff00;">CÂNCER</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_23.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-size:14pt; color:#ffff00;">GÊMEOS</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_28.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" color:#ffff00;">ESCORPIÃO</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_29.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-size:14pt; color:#ffff00;">VIRGEM</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_30.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-size:18pt; color:#ffff00;">LEÃO</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_31.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-size:16pt; color:#ffff00;">LIBRAS</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_32.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-size:18pt; color:#ffff00;">PEIXE</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_33.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-size:9pt; color:#ffff00;">CAPRICÓRNIO</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_34.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" color:#ffff00;">SARGITÁRIO</span></p></body></html>',
+                None,
+            )
+        )
+        self.label_35.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-size:12pt; color:#ffff00;">AQUÁRIOS</span></p></body></html>',
+                None,
+            )
+        )
         self.pushButton.setText(_translate("Form", "DEFAULT", None))
         self.pushButton_2.setText(_translate("Form", "SALVAR", None))
-        self.label_11.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:20pt; color:#0000ff;\">CONFIGURAÇÃO</span></p></body></html>", None))
-
-"""
-if __name__ == "__main__":
-    import sys
-    app = QtGui.QApplication(sys.argv)
-    Form = QtGui.QWidget()
-    ui = Config()
-    ui.setupUi(Form,4,5)
-    Form.show()
-    sys.exit(app.exec_())
-"""
+        self.label_11.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-size:20pt; color:#0000ff;">CONFIGURAÇÃO</span></p></body></html>',
+                None,
+            )
+        )
